@@ -1,5 +1,15 @@
 <div class="container text-center main-text">
 	<h1>Онлайн чат для тебя и твоих близких.</h1>
 	<h3>Начни общение прямо сейчас всего за пару шагов</h3>
-	<p><%= link_to "Create chat room", '#', class: 'btn btn-primary'%></p>
+	<% if user_signed_in? %>
+		<p><%= link_to "Create chat room", new_chat_room_path, class: 'btn btn-primary', remote: true, id:'create-button'%></p>
+	<% else %>
+		<p><%= link_to "Create an account", new_user_registration_path, class: 'btn btn-primary'%></p>
+	<% end %>
+	<div class="chat-room-form" id="create-room-form">
+	</div>
+</div>
+
+<div class="room-list" id="rooms">
+  <%= render 'room_list' %>
 </div>

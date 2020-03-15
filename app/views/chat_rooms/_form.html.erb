@@ -1,0 +1,7 @@
+<%= simple_form_for(@chat_room, url: yield(:room_url), remote:true) do |f| %>
+  <%= f.input :name, label: yield(:room_name_label) %>
+<% end %>
+<% if yield(:room_action) == "edit" %>
+  <%= link_to 'Cancel', chat_room_path(@chat_room), class: 'btn btn-default', remote: true %>
+<% end %>
+

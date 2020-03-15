@@ -1,0 +1,11 @@
+<% provide(:room_name_label, "Room name") %>
+<% provide(:room_url, chat_rooms_path) %>
+
+$('#create-room-form').html('<%= j render "form" %>');
+
+if($('#new_chat_room').length > 0){
+	$('#create-button').hide(1000)
+}
+
+
+

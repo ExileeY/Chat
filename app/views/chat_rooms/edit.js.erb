@@ -1,0 +1,5 @@
+<% provide(:room_name_label, 'New room name') %>
+<% provide(:room_url, chat_room_path(@chat_room)) %>
+<% provide(:room_action, "edit") %>
+
+$('#room-info').html('<%= j render "form" %>');

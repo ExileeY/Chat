@@ -1,12 +1,28 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 /* CSS Styles */
-@import "chat_rooms.scss";
 
-body{
-	background-image: url('https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-	background-size: cover; 
+body,html{
+    background: url(https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    overflow: scroll;
+    font-family: 'Roboto Slab', serif;
+	font-size: 16px;
 }
+
+div.alert{
+    position: absolute;
+    width: 100%;
+    transform: translate(0%, -36%);
+    color: gray;
+}
+
 h1,h2,h3,p,span,label{
 	color: white;
 }
+
+@import "chat_rooms.scss";

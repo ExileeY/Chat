@@ -5,9 +5,84 @@ div{
 	  margin-top: 80px;
 	  font-family: sans-serif;
 	  line-height: 1; 
-	  backdrop-filter: blur(10px);  
+	  backdrop-filter: blur(10px);
+	  -webkit-backdrop-filter: blur(10px);
+	  -moz-backdrop-filter: blur(10px);  
+	  -o-backdrop-filter: blur(10px);
+	  -ms-backdrop-filter: blur(10px);
 	  max-width: 80%;
 	  max-height: 50%;
 	  padding: 20px 40px;
+  }
+
+  h1{
+  	span{
+  		font-size: 18px;
+  		a{
+  			color: rgba(255,255,0,0.5);
+  			&:hover{
+  				color: hotpink;
+  				text-decoration: none;
+  			}
+  			&:focus{
+  				color: rgba(255,255,0,0.5);
+  				text-decoration: none;
+  			}
+  		}
+  	}
+  }
+
+  .chat-room-form{
+	max-width: 80%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	label{
+	  font-family: sans-serif;
+	  line-height: 1;
+	}
+  }
+
+  .invalid-feedback{
+  	color: white;
+  }
+
+  .room-list{
+  	width: 90%;
+  	margin-right: auto;
+	margin-left: auto;
+	h1{
+  	  text-align: center;
+	  font-size:3em;
+	  color:#fefefe;
+	}
+	p{
+	  display: inline-block;
+	  padding-right: 20px;
+
+	}
+
+	a{
+	  color: white;
+	  text-decoration: none;
+	  position: relative;
+	}
+
+	a::after{
+	  content: "";
+	  background: white;
+	  border-radius: 20px;
+		mix-blend-mode: exclusion;
+	  width: calc(100% + 20px);
+	  height: 0;
+	  position: absolute;
+	  bottom: -4px;
+	  left: -10px;
+		transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	}
+
+	a:hover::after{
+		height: calc(100% + 8px);
+	}
   }
 }

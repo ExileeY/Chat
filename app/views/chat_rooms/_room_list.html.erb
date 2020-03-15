@@ -1,0 +1,6 @@
+<% if @chat_rooms.any? %>
+	<h1>All rooms</h1>
+	<% @chat_rooms.each do |chat_room| %>
+		<p><%= link_to "#{chat_room.name}", chat_room_path(chat_room) %></p>
+	<% end %>
+<% end %>

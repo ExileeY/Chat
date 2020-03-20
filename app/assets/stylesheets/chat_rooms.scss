@@ -15,7 +15,13 @@ div{
 	  padding: 20px 40px;
   }
 
-  h1{
+  .chat-form-inline{
+  	display: inline-block;
+  	input{
+  	  width:19em;
+  	}
+  }
+
   	span{
   		font-size: 18px;
   		a{
@@ -30,7 +36,7 @@ div{
   			}
   		}
   	}
-  }
+  
 
   .chat-room-form{
 	max-width: 80%;
@@ -45,6 +51,11 @@ div{
 
   .invalid-feedback{
   	color: white;
+  	position: absolute;
+	  width: 32em;
+	  left: 50%;
+	  margin-left: -16em;
+	  margin-top: 5px;
   }
 
   .room-list{

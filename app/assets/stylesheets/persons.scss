@@ -1,0 +1,69 @@
+div{
+	.user-info{
+		font-size: 20px;
+		width: auto;
+		margin-right: auto;
+		margin-left: auto;
+		span{
+			display: inline;
+			border: solid 2px white;
+			border-radius: 5px;
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+	}
+
+	.profile-actions{
+		span{
+			border: solid 4px snow;
+			padding-bottom: 2.5px;
+			padding-top: 2.5px;
+		}
+	}
+
+	.connected-rooms{
+		display: inline-block;
+		float: left;
+	}
+
+	.created-rooms{
+		display: inline-block;
+		float: right;
+		text-align: center;
+
+		section{
+			border: solid 2px gray;
+			border-radius: 8px;
+		  height: auto;
+		  max-height: 30em;
+		  max-width: 14em;
+		  word-wrap: break-word;
+		  overflow-y: scroll;
+		}
+
+		a{
+		  color: white;
+		  text-decoration: none;
+		  position: relative;
+		
+
+			&::after{
+			  content: "";
+			  background: white;
+			  border-radius: 20px;
+			  mix-blend-mode: exclusion;
+				opacity: 40%;
+			  width: calc(100% + 20px);
+			  height: 0;
+			  position: absolute;
+			  bottom: -4px;
+			  left: -10px;
+				transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+			}
+
+			&:hover::after{
+				height: calc(100% + 8px);
+			}
+		}
+	}
+}

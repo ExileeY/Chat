@@ -1,7 +1,12 @@
 <%= simple_form_for(@chat_room, url: yield(:room_url), remote:true) do |f| %>
-  <%= f.input :name, label: yield(:room_name_label) %>
+  <div class="chat-form-inline">
+    <%= f.input :name, inline_label: true, label: yield(:room_name_label) %>
+  </div>
+  <div class="chat-form-inline">
+    <% if yield(:room_action) == "edit" %>
+      <span><%= link_to '', chat_room_path(@chat_room), class: 'glyphicon glyphicon-minus-sign', remote: true %></span>
+    <% end %>
+  </div>
 <% end %>
-<% if yield(:room_action) == "edit" %>
-  <%= link_to 'Cancel', chat_room_path(@chat_room), class: 'btn btn-default', remote: true %>
-<% end %>
+
 

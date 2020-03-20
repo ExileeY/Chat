@@ -20,6 +20,7 @@ class ChatRoomsController < ApplicationController
 	end
 
 	def show
+		@message = @user.messages.new
 	end
 
 	def edit

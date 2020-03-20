@@ -1,0 +1,29 @@
+<div class="text-center">
+  <h1><%= @user.username %></h1>
+  <div class="user-info">
+  	<p><span>email:</span><span><%= @user.email %></span></p>
+  	<p><span>status:</span><span>Active, banned test</span></p>
+  	<p><span>role:</span><span>user, vip, moderator, admin, owner test</span></p>
+  	<p><span>count of rooms:</span><span><%= @user.chat_rooms.count %></span></p>
+	<p class="profile-actions">
+	  <span>Edit user data</span> 
+	  <span><%= link_to "Edit", edit_user_registration_path(@user)%></span>
+	</p>
+  </div>
+  
+</div>
+
+<div class="connected-rooms">
+	<h2>Connected Rooms</h2>
+</div>
+
+<div class="created-rooms">
+	<% if user_has_chat_rooms?(@user) %>
+	  <h2>Created Rooms</h2>
+	  <section>
+	    <% @user.chat_rooms.each do |chat_room|%>
+	      <p><%= link_to chat_room.name, chat_room_path(chat_room) %></p>
+	    <% end %>
+	  </section>
+	<% end %>
+</div>

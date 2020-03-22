@@ -1,3 +1,38 @@
-// Place all the styles related to the Messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+div{
+	.chat-messages{
+		margin-left: auto;
+		margin-right: auto;
+		border: solid 2px gray;
+		border-radius: 5px;
+		background-color: white;
+		width: 50%;
+
+		p, span, label, h3{
+			color: black;
+			margin-bottom: 0;
+		}
+
+		p{
+			padding-bottom: 5px;
+		}
+
+		a{
+			font-size: 13px;
+			color: blue;
+
+			&.delete-sign{
+				color: red;
+			}
+
+			&:focus{
+				color: gray;
+			}
+		}
+
+		#room-messages{
+			max-height: 300px;
+			overflow: scroll;
+			word-wrap: break-word;
+		}
+	}
+}

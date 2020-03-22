@@ -1,0 +1,4 @@
+<%provide(:message_form_url, chat_room_message_path(@chat_room, @message))%>
+<% provide(:message_form_method, :patch) %>
+
+$('#message-form-type').html("<%= j render 'chat_rooms/message_form' %>")

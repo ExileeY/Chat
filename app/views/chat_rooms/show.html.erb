@@ -1,9 +1,18 @@
+<%provide(:message_form_url, chat_room_messages_path(@chat_room))%>
 <div class="container text-center">
 	<div id="room-info">
 		<%= render 'about_room' %>
 	</div>
 
-	<div class="chat-comments">
-		
+	<div class="chat-messages">
+		<div id="room-messages">
+		  <% if @chat_room.messages.any? %>
+		    <%= render 'room_messages' %>
+		  <% end %>
+		</div>
+
+		<div id="message-form-type">
+		  <%= render 'message_form' %>
+		</div>
 	</div>
 </div>

@@ -1,0 +1,5 @@
+<%= simple_form_for([@chat_room, @message], url: yield(:message_form_url), method: yield(:message_form_method), remote: true) do |f| %>
+	<%= f.label "Content" %>
+    <%= f.input :content, label: false %>
+    <%= f.submit "Send", class: 'btn btn-primary' %>
+<% end %>

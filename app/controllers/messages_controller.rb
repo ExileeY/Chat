@@ -1,19 +1,43 @@
 class MessagesController < ApplicationController
+	before_action :set_chat_room
+	before_action :find_message, only: [:edit, :update, :destroy]
+	before_action :require_permissions, only: [:edit, :update, :destroy]
 	def create
 		@message = current_user.messages.new(message_params)
-		if @message.save
+		@message.chat_room = @chat_room
+		@message.save
+	end
 
-		else
-		end
+	def edit
+	end
+
+	def update
+		@message.update_attributes(message_params)
+	end
+
+	def destroy
+		@message.destroy
+		redirect_to chat_room_path(@chat_room)
 	end
 
 	def set_chat_room
 		@chat_room = ChatRoom.find(params[:chat_room_id])
 	end
 
+	def find_message
+		@message = Message.find(params[:id])
+	end
+
 	private
 
 	def message_params
 		params.require(:message).permit(:content)
+	end
+
+	def require_permissions
+		if current_user != @message.user
+			flash[:danger] = "You can't do this action!"
+			redirect_to chat_room_path(@chat_room)
+		end
 	end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_16_201512) do
+ActiveRecord::Schema.define(version: 2020_06_22_102247) do
 
   create_table "chat_rooms", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2020_03_16_201512) do
     t.text "content"
     t.integer "user_id"
     t.integer "chat_room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.boolean "vip", default: false
+    t.boolean "moder", default: false
+    t.boolean "admin", default: false
+    t.boolean "owner", default: false
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

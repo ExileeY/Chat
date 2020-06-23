@@ -1,5 +1,6 @@
 <% provide(:message_form_url, chat_room_messages_path(@chat_room)) %>
 <% provide(:message_form_method, :post) %>
 
-$('#room-messages').html("<%= j render 'chat_rooms/room_messages' %>")
-$('#message-form-type').html("<%= j render 'chat_rooms/message_form' %>")
+$('#messages').html("<%= j render @chat_room.messages %>");
+$('#message-form-type').html("<%= j render 'chat_rooms/message_form' %>");
+$('#message_content').val('');

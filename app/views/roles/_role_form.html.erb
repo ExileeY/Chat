@@ -1,0 +1,8 @@
+<%= simple_form_for([@user, @role], url: yield(:user_role_route), wrapper: :inline_form, html: { class: 'form-inline' }) do |f| %>
+  <span>
+	<%= f.input :vip, as: :boolean %>
+	<%= f.input :moder, as: :boolean %>
+	<%= f.input :admin, as: :boolean %>
+    <%= f.button :submit, "Give role", class:"btn btn-xs btn-success", style:"margin-bottom:3px" %>
+  </span>
+<% end %>

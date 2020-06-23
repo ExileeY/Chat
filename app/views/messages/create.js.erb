@@ -1,1 +1,3 @@
-$('#room-messages').html("<%= j render 'chat_rooms/room_messages' %>")
+$("#message-form-type").bind("ajax:complete", function(event,xhr,status){
+  $('#message_content').val('');
+});

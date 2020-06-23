@@ -1,9 +1,34 @@
+<%provide(:user_role_route, user_role_path(@user))%>
 <div class="text-center">
   <h1><%= @user.username %></h1>
   <div class="user-info">
   	<p><span>email:</span><span><%= @user.email %></span></p>
   	<p><span>status:</span><span>Active, banned test</span></p>
-  	<p><span>role:</span><span>user, vip, moderator, admin, owner test</span></p>
+  	<p>
+  		<span>role:</span>
+  		<% if @user.role.nil? %>
+  		   <span>Stranger</span>
+  		<% else %>
+  		  <span>
+  		   <% @user.role.attributes.each do |key, val| %>
+  		     <e class="<%=key%>"><%= key.capitalize if val == true %></e>
+  		   <% end %>
+  		  </span>
+  		<% end %>
+  	</p>
+  	<p>
+  	  <%if (!current_user.role.nil? && current_user.role.owner = true && @user != current_user) %>
+  	  	<%if !@user.role.blank?%>
+  	  	  <span>
+  	  		<%= link_to "Remove role", @user.role, method: :delete, data: { confirm: "Do you want to remove this role" } %>
+  	  		| <%= link_to "Change role", edit_user_role_path(@user, @user.role), remote: true %>
+  	  	  </span>
+  	    <% end %>
+  	      <div id="role-form">
+	  	    <%= render "roles/role_form" %>
+	  	  </div>
+  	  <% end %>
+  	</p>
   	<p><span>count of rooms:</span><span><%= @user.chat_rooms.count %></span></p>
 	<p class="profile-actions">
 	  <span>Edit user data</span> 

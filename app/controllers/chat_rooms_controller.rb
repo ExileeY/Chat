@@ -3,6 +3,7 @@ class ChatRoomsController < ApplicationController
 	before_action :set_user
 	before_action :load_entity, only: [:show, :edit, :update, :destroy]
 	before_action :require_permission, only: [:edit, :update, :destroy]
+	
 	def index
 		@chat_rooms = ChatRoom.all
 	end

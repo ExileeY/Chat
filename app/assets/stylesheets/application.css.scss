@@ -14,11 +14,27 @@ body,html{
 	font-size: 16px;
 }
 
+textarea#message_content{
+  resize: none;
+  height: 75px;
+}
+
 div.alert{
     position: absolute;
     width: 100%;
     transform: translate(0%, -36%);
     color: gray;
+    button{
+        span{
+          color:black;
+        }
+    }
+}
+
+#messages {
+  .avatar {
+    margin: 0.5rem;
+  }
 }
 
 h1,h2,h3,p,span,label{
@@ -28,3 +44,4 @@ h1,h2,h3,p,span,label{
 @import "chat_rooms.scss";
 @import "persons.scss";
 @import "messages.scss";
+@import "roles.scss";

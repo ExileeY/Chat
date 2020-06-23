@@ -6,9 +6,12 @@
 
 	<div class="chat-messages">
 		<div id="room-messages">
-		  <% if @chat_room.messages.any? %>
-		    <%= render 'room_messages' %>
-		  <% end %>
+			<% if @chat_room.messages.any? %>
+			  <h3>Messages</h3>
+			<% end %>
+			<section id="messages" data-chat_room-id="<%= @chat_room.id %>">
+			  <%= render @chat_room.messages %>
+			</section>
 		</div>
 
 		<div id="message-form-type">

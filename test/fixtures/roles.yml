@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: false
+  vip: false
+  moder: false
+  admin: false
+  owner: false
+  user_id: 1
+
+two:
+  user: false
+  vip: false
+  moder: false
+  admin: false
+  owner: false
+  user_id: 1

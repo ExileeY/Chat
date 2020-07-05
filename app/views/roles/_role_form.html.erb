@@ -1,8 +1,12 @@
-<%= simple_form_for([@user, @role], url: yield(:user_role_route), wrapper: :inline_form, html: { class: 'form-inline' }) do |f| %>
+<%= simple_form_for([@user, @role], remote:true, url: yield(:user_role_route), wrapper: :inline_form, html: { class: 'form-inline' }) do |f| %>
   <span>
-	<%= f.input :vip, as: :boolean %>
-	<%= f.input :moder, as: :boolean %>
-	<%= f.input :admin, as: :boolean %>
+	  <%= f.input :vip, as: :boolean %>
+	  <%= f.input :moder, as: :boolean %>
+	<% if current_user.role.owner %>
+	  <%= f.input :admin, as: :boolean %>
+	<% end %>
     <%= f.button :submit, "Give role", class:"btn btn-xs btn-success", style:"margin-bottom:3px" %>
   </span>
 <% end %>
+<div id="errors">
+</div>

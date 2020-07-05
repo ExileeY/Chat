@@ -1,6 +1,7 @@
 <h1>
   Room <%= @chat_room.id %>: <%=@chat_room.name%> 
-  <% if chat_room_owner? %>
+  <span><%= link_to '', "#", class: 'glyphicon glyphicon-star-empty', style:"font-size:25px;", remote: true %></span>
+  <% if person_have_role? || chat_room_owner? %>
     | <span>
 	  <%= link_to '', edit_chat_room_path(@chat_room), class: 'glyphicon glyphicon-pencil', remote: true %>
       <%= link_to '', @chat_room, data: {confirm: "You shure???"}, method: :delete, class: 'glyphicon glyphicon-remove-sign' %>

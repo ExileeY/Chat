@@ -54,7 +54,7 @@ class ChatRoomsController < ApplicationController
 	end
 
 	def require_permission
-		if @user != @chat_room.user
+		if @user != @chat_room.user && (@user.role.blank? || @user.role.vip)
 			flash[:danger] = "You haven't got enough permission"
 			redirect_to root_path
 		end

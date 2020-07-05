@@ -1,0 +1,9 @@
+<span>role:</span>
+<% if @user.role.nil? %>
+  <span>Stranger</span>
+<% else %>
+  <% user_role = @user.role.attributes.key(true) %>
+  <span class="<%=user_role%>">
+  	<%= user_role.capitalize %>
+  </span>
+<% end %>

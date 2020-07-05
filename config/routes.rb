@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :roles
   get '/profile/:id', to: 'persons#profile', as: 'profile'
   get '/profile/:user_id/role/:id', to: 'roles#edit', as: 'edit_user_role'
+  get '/profile/:id/ban', to: 'persons#ban', as: 'ban_user'
+  get '/profile/:id/unban', to: 'persons#unban', as: 'unban_user'
   post '/profile/:user_id/roles', to: 'roles#create', as: 'user_role'
   patch '/profile/:user_id/roles/:id', to: 'roles#update', as: 'user_roles'
   mount ActionCable.server => '/cable'

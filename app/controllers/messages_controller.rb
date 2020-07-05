@@ -35,9 +35,9 @@ class MessagesController < ApplicationController
 	end
 
 	def require_permissions
-		if current_user != @message.user
-			flash[:danger] = "You can't do this action!"
-			redirect_to chat_room_path(@chat_room)
+		if current_user != @message.user && (current_user.role.blank? || current_user.role.vip)
+			  flash[:danger] = "You havent got enough permissions"
+			  redirect_to chat_room_path(@chat_room)
 		end
 	end
 end

@@ -1,0 +1,19 @@
+<span>status:</span>
+<span>
+  <% if @user.banned == false %>
+    Active
+  <% else %>
+  	Banned
+  <% end %>
+</span>
+<% if user_have_permissions?(@user) %>
+  <% if @user.role.blank? || !@user.role.owner %>
+    <span class="btn btn-sm" style="padding-left:0;padding-right:0;">
+      <% if !@user.banned %>
+  	    <%= link_to "Ban", ban_user_path(@user), class:"btn btn-xs btn-danger", style:"margin-bottom:4px;", remote: true%>
+      <% else %>
+  	    <%= link_to "Unban", unban_user_path(@user), class:"btn btn-xs btn-primary", style:"margin-bottom:4px;", remote: true%>
+      <% end %>
+    </span>
+  <% end %>
+<% end %>

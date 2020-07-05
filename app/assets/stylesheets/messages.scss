@@ -33,6 +33,26 @@ div{
 			max-height: 300px;
 			overflow: scroll;
 			word-wrap: break-word;
+			a {
+			  &.username{
+			  	font-size: 20px;
+			  }
+			  &.stranger{
+			  	color:#A9A9A9;
+			  }
+			  &.vip{
+			  	color:#FFD700;
+			  }
+			  &.moder{
+			  	color:#87CEFA;
+			  }
+			  &.admin{
+			  	color:#EE82EE;
+			  }
+			  &.owner{
+			  	color:#32CD32;
+			  }
+			}
 		}
 	}
 }

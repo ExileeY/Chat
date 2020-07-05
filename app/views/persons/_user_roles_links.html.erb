@@ -1,0 +1,6 @@
+<% if (current_user.role.admin && !@user.role.owner && !@user.role.admin) || current_user.role.owner %>
+  <span>
+    <%= link_to "Remove role", @user.role, method: :delete, data: { confirm: "Do you want to remove this role" } %>
+    | <%= link_to "Change role", edit_user_role_path(@user, @user.role), remote: true %>
+  </span>
+<% end %>

@@ -38,17 +38,26 @@
   
 </div>
 
-<div class="connected-rooms">
-	<h2>Favorite Rooms</h2>
-</div>
+<div class="profile-rooms">
+	<div class="favorite-rooms">
+		<% if @user.favorites.any? %>
+		  <h2>Favorite Rooms</h2>
+		  <section>
+		    <% @favorites.each do |favorite| %>
+		      <p><%= link_to favorite.chat_room.name, chat_room_path(favorite.chat_room) %></p>
+		    <% end %>
+		  </section>
+		<% end %>
+	</div>
 
-<div class="created-rooms">
-	<% if user_has_chat_rooms?(@user) %>
-	  <h2>Created Rooms</h2>
-	  <section>
-	    <% @user.chat_rooms.each do |chat_room|%>
-	      <p><%= link_to chat_room.name, chat_room_path(chat_room) %></p>
-	    <% end %>
-	  </section>
-	<% end %>
+	<div class="created-rooms">
+		<% if user_has_chat_rooms?(@user) %>
+		  <h2>Created Rooms</h2>
+		  <section>
+		    <% @user.chat_rooms.each do |chat_room|%>
+		      <p><%= link_to chat_room.name, chat_room_path(chat_room) %></p>
+		    <% end %>
+		  </section>
+		<% end %>
+	</div>
 </div>

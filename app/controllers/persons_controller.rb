@@ -4,6 +4,7 @@ class PersonsController < ApplicationController
 	
 	def profile
 		@role = Role.new
+		@favorites = @user.favorites
 	end
 
 	def ban

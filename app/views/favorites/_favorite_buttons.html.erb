@@ -1,0 +1,6 @@
+<% if user_favorite_room_is_not_exists?(@user, @chat_room) %>
+  <%= link_to '', favorite_path(@chat_room), remote: true, class: 'glyphicon glyphicon-star-empty', style:"font-size:25px;" %>
+<% else %>
+  <% favorite = @user.favorites.find_by(chat_room_id: @chat_room.id) %>
+  <%= link_to '', unfavorite_path(favorite), method: :delete, remote:true, class: 'glyphicon glyphicon-star', style:"font-size:25px;" %>
+<% end %>

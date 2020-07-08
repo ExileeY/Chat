@@ -7,6 +7,26 @@ class ApplicationController < ActionController::Base
 		render 'persons/ban_page' if user_signed_in? && current_user.banned == true
 	end
 
+	def sun
+      cookies.delete(:moon)
+      if user_signed_in?
+      	redirect_to profile_path(current_user)
+      else
+      	redirect_to root_path
+      end
+	end
+
+	def moon
+      cookies[:moon] = {
+      	value:"Dark mode on"
+      }
+      if user_signed_in?
+      	redirect_to profile_path(current_user)
+      else
+      	redirect_to root_path
+      end
+	end
+
 	protected
 
 		def configure_permitted_parameters

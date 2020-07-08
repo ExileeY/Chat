@@ -6,6 +6,10 @@ class ChatRoomsController < ApplicationController
 	
 	def index
 		@chat_rooms = ChatRoom.all
+		if params[:search]
+		  @search_term = params[:search]
+		  @chat_rooms = @chat_rooms.search_by(@search_term)
+		end
 	end
 
 	def new

@@ -3,7 +3,7 @@
 /* CSS Styles */
 
 body,html{
-    background: url(https://previews.dropbox.com/p/thumb/AA24qVIONbrVS9eLumeL7r9ME3h1glIVO5t9Sfmv_HFJBnsI5isATtIqd_oxcDQyNQLmdcQuAQtk6eAndLAV5mIXwScpOnNvcfGtWx7BYReerMJuOds_rxDfOJNPEN4wxB0MbIf5yH68pVWeuiUMyyiG1kZrUDkWJlOYyJk0P_TweMV0xrnzgA4zWS9u_B-3slnBU8gdMf7rZiTM8y_VYMDS5yHYD0jQ1dIY1S4SQOVmsC_2BcdQwRltRWhUsEe3r7IEYs0juYCeTr88ooAVwYsgtnz6deGqd_vip20tgWN9yh7HJ2tHggl0FH6ZR9YTMABs5k2_EhwwfliaQOWuAbYb0jbEh0BmYgs6Ojg7QxeYBw/p.jpeg?size=2048x1536&size_mode=3) no-repeat center center fixed;
+    background: url(https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -34,6 +34,56 @@ div.alert{
 #messages {
   .avatar {
     margin: 0.5rem;
+  }
+}
+
+a {
+  &.login-btn {
+    display: block;
+    border: 1px solid #babacc;
+    border-radius: 10px;
+    padding: 0 8px 0 54px;
+    font-weight: 900;
+    background-color: #fff;
+    line-height: 32px;
+    width: 20%;
+    text-decoration: none;
+    position: relative;
+  }
+  &.login-btn:before{
+    content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 12px;
+    top: 6px;
+    -webkit-background-size: 18px 18px;
+    -moz-background-size: 18px 18px;
+    -o-background-size: 18px 18px;
+    background-size: 18px 18px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  &.login-btn:after{
+    content: "";
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    left: 40px;
+    top: 0;
+    background-color: #babacc;
+  }
+
+  &.login-btn:hover{
+    background-color: #B0C4DE;
+  }
+
+  &.login-btn-facebook:before {
+    background-image: url(https://image.flaticon.com/icons/svg/2111/2111393.svg);
+  }
+
+  &.login-btn-vkontakte:before {
+    background-image: url(https://image.flaticon.com/icons/svg/2111/2111712.svg);
   }
 }
 

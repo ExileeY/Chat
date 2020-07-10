@@ -3,7 +3,7 @@
 /* CSS Styles */
 
 body,html{
-    background: url(https://previews.dropbox.com/p/thumb/AA0gSmXsfn8PNKOZ2J1KrGXRMITWZnFA8ZUsomaQATLS6WF6eXJGtU6AL04GZTkmPL5eUGdwCHAfryggHEtvIBdD3R3-dWMZ512CpR_lPwNqh_nhWRYEn6sS5-hyfai5mpMIniNGM_N9cmcdapSQXD_4MHNRpXMMywLrhqJgdSMJUxKCUGj-huFgyAuHSMBJ7ORZnAbMVYyPt2Aggcm0LDdxPDrHavKctttzIkjl4Y9S3cLIW4QaBOHoBH_qxZ4_lV8GoeybHi7B9PlmULRgLhTKava-fYBqKW4Oj8HJM24PSOlIcXhCTaeTv_HC4kmR748acGwofC1EFcU7vWfOQz3JIVItCIik3ORIefzA0KoaDw/p.jpeg?fv_content=true&size_mode=5) no-repeat center center fixed;
+    background: url(https://multicolor.io/static/8d3d2f73821055b1c4f9faae1b23926d/ab7ec/2019-10-04-dark-wood-texture.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -34,6 +34,56 @@ div.alert{
 #messages {
   .avatar {
     margin: 0.5rem;
+  }
+}
+
+a {
+  &.login-btn {
+    display: block;
+    border: 1px solid #babacc;
+    border-radius: 9px;
+    padding: 0 8px 0 54px;
+    font-weight: 900;
+    background-color: #fff;
+    line-height: 32px;
+    width: 20%;
+    text-decoration: none;
+    position: relative;
+  }
+  &.login-btn:before{
+    content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 12px;
+    top: 6px;
+    -webkit-background-size: 18px 18px;
+    -moz-background-size: 18px 18px;
+    -o-background-size: 18px 18px;
+    background-size: 18px 18px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  &.login-btn:after {
+    content: "";
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    left: 40px;
+    top: 0;
+    background-color: #babacc;
+  }
+
+  &.login-btn:hover{
+    background-color: #B0C4DE;
+  }
+
+  &.login-btn-facebook:before {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAAVFBMVEUAAAAcjvIdlv4dlv8cl/8ZguIcj/Egl/8cjvEZlvYdlv4ck/kcj+8ZhuAbgNsdlPwclfsclPkcje4ek/kelf8aiu0biewbiuodkvgck/8ejPUel/+sgL4cAAAAG3RSTlMAmsOfQD2SICQR04hsLRz9xsW3rIB0XVVGQDOQot/GAAAAcklEQVQ4y+3QORKAIAxAUWVRUMB95f73FLCgEchoYaG/onhDJsnej5c2HiMCNdqGI6azIIFqnUZKA9CcRH7ayhgLb5c707p3AqGnSFHaO1RRkwx/48MQNEKQgKANgvZrJAkZzu2ICXSnH30WLYVtym50AK0BGFMu0HXjAAAAAElFTkSuQmCC);
+  }
+
+  &.login-btn-vkontakte:before {
+    background-image: url(https://image.flaticon.com/icons/svg/25/25684.svg);
   }
 }
 

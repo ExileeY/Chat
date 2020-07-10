@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'chat_rooms#index'
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks", registrations: "users/registrations" }
+  
   resources :chat_rooms do
   	resources :messages
   end

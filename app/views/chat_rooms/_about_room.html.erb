@@ -10,3 +10,6 @@
     </span>
   <% end %>
 </h1>
+<% if chat_room_owner? && @chat_room.private_room %>
+  <h3>Password: <%=@chat_room.password%></h3>
+<% end %>

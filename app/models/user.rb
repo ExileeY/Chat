@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :chat_rooms, dependent: :destroy
   has_many :messages, dependent: :destroy  
   has_many :favorites, dependent: :destroy
+  has_many :user_room_passwords, dependent: :destroy
   has_one :role, dependent: :destroy
 
   def self.new_with_session(params, session)

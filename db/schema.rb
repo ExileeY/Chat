@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_08_152351) do
+ActiveRecord::Schema.define(version: 2020_07_11_070605) do
 
   create_table "chat_rooms", force: :cascade do |t|
     t.string "name"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "private_room", default: false
+    t.string "password"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -40,6 +42,14 @@ ActiveRecord::Schema.define(version: 2020_07_08_152351) do
     t.boolean "admin", default: false
     t.boolean "owner", default: false
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_room_passwords", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "chat_room_id"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

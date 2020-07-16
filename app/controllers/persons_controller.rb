@@ -19,6 +19,10 @@ class PersonsController < ApplicationController
 		@user = User.find(params[:id])
 	end
 
+	def users_profiles
+		@users = User.all
+	end
+
 	private
 		def check_user_permissions
 			if (current_user.role.blank? || (!@user.role.blank? && !current_user.role.owner && @user.role.owner) ||

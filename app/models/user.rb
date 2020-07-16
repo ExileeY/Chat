@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook vkontakte]
 
+  mount_uploader :image, ImageUploader
+  validates :image, file_size: {less_than: 3.megabytes}
   validates :username, presence: true, uniqueness: true
   has_many :chat_rooms, dependent: :destroy
   has_many :messages, dependent: :destroy  
@@ -31,7 +33,7 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,30]
       user.username = auth.info.name
-      user.image = auth.info.image
+      user.remote_image_url = auth.info.image
     end
   end
 end

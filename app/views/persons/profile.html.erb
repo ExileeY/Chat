@@ -1,6 +1,10 @@
 <%provide(:user_role_route, user_role_path(@user))%>
 <div class="text-center">
-  <h1><img style="border-radius:100%;" src="<%= @user.image %>"> <%= @user.username %></h1>
+  <h1>
+  	<% if @user.image? %>
+  	  <%= image_tag(@user.image.url, class:"profile-image") %> 
+  	<% end %>
+  	<%= @user.username %></h1>
   <div class="user-info">
   	<p><span>email:</span><span><%= @user.email %></span></p>
   	<p id="user-status">

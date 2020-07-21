@@ -1,5 +1,8 @@
+<% if UserMute.where(user_id: current_user.id, chat_room_id: @chat_room.id).exists? %>
+  <%provide(:message_hint, "You has been muted until #{UserMute.find_by(user_id: current_user.id, chat_room_id: @chat_room.id).time.strftime("%h/%d/%Y %H:%M") }")%>
+<% end %>
 <%= simple_form_for([@chat_room, @message], url: yield(:message_form_url), method: yield(:message_form_method), remote: true) do |f| %>
 	<%= f.label "Content" %>
-    <%= f.input :content, label: false %>
+    <%= f.input :content, placeholder: yield(:message_hint), label: false %>
     <%= f.submit "Send", class: 'btn btn-primary'%>
 <% end %>

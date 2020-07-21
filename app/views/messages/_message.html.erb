@@ -5,6 +5,7 @@
       <span><%= link_to message.user.username, profile_path(message.user), class:"username #{user_role}" %>: </span> 
       <span><%= message.content %></span>
       <span><%= link_to "", edit_chat_room_message_path(message.chat_room, message), class: 'glyphicon glyphicon-edit', remote: true %></span>
-      <span><%= link_to "", chat_room_message_path(message.chat_room, message), data: {confirm: "Do you want to delete this message?"}, method: :delete, class: 'glyphicon glyphicon-remove delete-sign' %></span>
+      <span><%= link_to "", chat_room_message_path(message.chat_room, message), data: {confirm: "Do you want to delete this message?"},method: :delete, class: 'glyphicon glyphicon-remove delete-sign' %></span>
+      <span><%= link_to "", new_user_mute_path(message.user, message.chat_room), remote:true, class: 'glyphicon glyphicon-volume-off' %></span>
   </div>
 <% end %>

@@ -1,3 +1,4 @@
 $("#message-form-type").bind("ajax:complete", function(event,xhr,status){
   $('#message_content').val('');
+  $('#message_content').attr("placeholder", "Type your message here...");
 });

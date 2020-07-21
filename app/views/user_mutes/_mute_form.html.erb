@@ -1,0 +1,9 @@
+<%# mute_time = [5,10,30] %>
+<span>Mute user: <%= @user.username %></span>
+<%= simple_form_for(@user_mute) do |f| %>
+  <%= f.input :user_id, input_html: {value: @user.id}, as: :hidden %>
+  <%= f.input :chat_room_id, input_html: {value: @chat_room.id}, as: :hidden %>
+  <%= f.input :time, as: :datetime, input_html: {style: "width:auto; display:inline;"}%>
+  <%= f.submit "Mute", class:"btn btn-default" %>
+<% end %>
+<span><%= link_to "Cancel", '' %></span>
